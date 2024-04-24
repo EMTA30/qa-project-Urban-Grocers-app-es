@@ -27,7 +27,10 @@ def positive_assert_kit_name(kit_name):
     # El resultado de la solicitud para crear un kit se guarda en la variable kit_response
     kit_response = sender_stand_request.post_new_kit(kit_body, auth_token)
     assert kit_response.status_code == 201  # Comprueba si el código de estado es 201
-    print(kit_response.text) # Imprime el valor del kit creado para comprobar que utiliza el auth_token generado
+
+    # CORRECCION. Combrueba que el campo name del cuerpo de la respuesta coincida con el del cuerpo de la solicitud.
+    assert kit_response.json()["name"] == kit_name
+    print(kit_response.text)  # Imprime el valor del kit creado para comprobar que utiliza el auth_token generado
 
 
 # Función de prueba negativa con error 400 para creación de kit

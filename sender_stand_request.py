@@ -10,10 +10,6 @@ def post_new_user(body):
                          headers=data.headers)  # inserta los encabezados
 
 
-response = post_new_user(data.user_body)
-print(response.status_code)
-
-
 def post_new_kit(body, auth_token):
     headers = {
         "Authorization": f"Bearer {auth_token}",  # Usar el authToken en el encabezado
