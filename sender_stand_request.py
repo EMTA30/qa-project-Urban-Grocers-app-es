@@ -24,3 +24,4 @@ def post_new_kit(body, auth_token):
         json=body,  # Cuerpo del POST para el kit
         headers=headers  # Encabezados incluyendo el Authorization con el authToken
     )
+

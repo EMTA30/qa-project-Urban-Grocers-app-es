@@ -94,3 +94,4 @@ def test8_create_kit_no_name_get_error_response():
 # Prueba 9. Error. El tipo del parámetro name es numerico.
 def test9_create_kit_number_type_name_get_error_response():
     negative_assert_code_400(567)
+
